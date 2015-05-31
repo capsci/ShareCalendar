@@ -1,4 +1,5 @@
 '''
+    file: Credentials.py
     Sets up API credentials for future data requests
     Please follow steps at https://github.com/capsci/ShareCalendar for more details
 '''

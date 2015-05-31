@@ -1,5 +1,6 @@
 '''
-	Starter fiel for Share Calendar Applciation
+	file: ShareCalendar.py 
+	Starter file for Share Calendar Applciation
 '''
 __author__ = "Kapil Somani"
 __email__ = "kmsomani@ncsu.edu"
