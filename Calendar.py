@@ -16,14 +16,14 @@ __status__ = "Prototype"
 import json
 
 # manipulate custom data structure storing details about multiple categories and list of accounts associated with it
-class CalendarStructure(object):
+class Calendar(object):
 
 	data = None;
 	fileName = "categories.json";
 	
 	"""docstring for CalendarStructure"""
 	def __init__(self, inpFile = fileName):
-		super(CalendarStructure, self).__init__();
+		super(Calendar, self).__init__();
 		self.fileName = inpFile;
 		# read the file and populate data
 		try:
@@ -68,7 +68,7 @@ class CalendarStructure(object):
 
 
 if __name__ == "__main__":
-	cs = CalendarStructure();
+	cs = Calendar();
 	categories = cs.getCategories();
 	print(categories);
 	for category in categories:

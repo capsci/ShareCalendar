@@ -1,1 +1,7 @@
-Google OpenID for authorization
+* Google OpenID for authorization
+
+* Search by emailID, event title and description
+
+* Inverse lookup for categories.json... for faster updates
+
+* Search results display order
