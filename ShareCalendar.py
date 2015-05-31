@@ -1,8 +1,11 @@
-import CalendarStructure
+'''
+	Starter fiel for Share Calendar Applciation
+'''
+__author__ = "Kapil Somani"
+__email__ = "kmsomani@ncsu.edu"
+__status__ = "Prototype"
 
-class  CalendarStructure(object):
-	
-	"""docstring for  CalendarStructure"""
-	def __init__(self, arg):
-		super( CalendarStructure, self).__init__()
-		self.arg = arg
+import Credentials
+
+if __name__ == '__main__':
+    creds = Credentials.get_credentials();

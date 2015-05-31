@@ -1,8 +1,15 @@
-from datetime import datetime
+'''
+    Sets up API credentials for future data requests
+    Please follow steps at https://github.com/capsci/ShareCalendar for more details
+'''
+__author__ = "Kapil Somani"
+__email__ = "kmsomani@ncsu.edu"
+__status__ = "Prototype"
+
 import os
 
 from apiclient.discovery import build
-from httplib2 import Http
+
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
@@ -45,30 +52,3 @@ def get_credentials():
             credentials = tools.run(flow, store)
         print 'Storing credentials to ' + credential_path
     return credentials
-
-def main():
-    """Shows basic usage of the Google Calendar API.
-
-    Creates a Google Calendar API service object and outputs a list of the next
-    10 events on the user's calendar.
-    """
-    credentials = get_credentials()
-    service = build('calendar', 'v3', http=credentials.authorize(Http()))
-
-    now = datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    print 'Getting the upcoming 10 events'
-
-    eventsResult = service.events().list(
-        calendarId='kmsomani@ncsu.edu', timeMin=now, maxResults=10, singleEvents=True,
-        orderBy='startTime').execute()
-    events = eventsResult.get('items', [])
-
-    if not events:
-        print 'No upcoming events found.'
-    for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        print start, event['summary']
-
-
-if __name__ == '__main__':
-    main()
